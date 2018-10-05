@@ -1,4 +1,5 @@
 import {VRouter} from "../../lib/VServer/VRouter";
+import {newsModel} from "../../Model/NewsModel";
 
 export const indexRoute = new VRouter();
-indexRoute.addGetRoute('/', (req, resp) => { resp.send("OK"); });
+indexRoute.addGetRoute('/news/:limit', (req, res) => newsModel.getLatestNews(req, res));
