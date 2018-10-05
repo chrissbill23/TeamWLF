@@ -15,7 +15,7 @@ class NewsModel extends VModel{
     public getLatestNews(req: Request, res: Response): void {
         this.readQuery.reset().limit(parseInt(req.params.limit))
                     .sort({createdAt: -1})
-                    .lookup("CapitaleOwner", "publisher", "_id", "publisher", true);
+                    .lookup("capitalowners", "publisher", "_id", "publisher");
         NewsModel.db.findAll(this.readQuery)
             .then((news: News[]) => this.handleSuccess(news, res),
                 (err) => this.handleError(err, res));

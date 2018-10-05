@@ -18,7 +18,7 @@ export class VMongoDBReadQuery implements VMongoDBQuery {
         }
         this.agregateQuery.push({$match: obj});
     }
-    public selectAttributes(args: string[]): this {
+    public selectAttributes(...args: string[]): this {
         if (args != undefined && args != null && args.length > 0) {
             const obj = {};
             for (const value of args) {

@@ -14,7 +14,7 @@ export abstract class VModel {
         res.status(err.getStatus()).json(err.giveMessageToClient());
         res.end();
     }
-    protected handleSuccess(data: VDBMongoDocument | VDBMongoDocument[] | any, res: Response) {
+    protected handleSuccess(data: any, res: Response) {
         res.status(200).json(data);
         res.end();
     }

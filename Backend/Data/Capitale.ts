@@ -10,7 +10,7 @@ export class Capitale extends VDBMongoDocument{
     public value: number;
 }
 @VSchema()
-export class CapitaleOwner extends VDBMongoDocument{
+export class CapitalOwner extends VDBMongoDocument{
     @VProperty({type: Object, required: false})
     public info: object;
 }
