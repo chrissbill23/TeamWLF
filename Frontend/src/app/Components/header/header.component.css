@@ -1,0 +1,50 @@
+nav{
+  padding-top: 1.5em;
+}
+img.navbar-brand{
+  width: 10%;
+  margin-right: 10rem;
+}
+ul.navbar-nav {
+  margin: 0;
+}
+.navbar {
+  align-items: flex-start;
+}
+.nav-item{
+  margin-left: 0.7em;
+  font-size: 0.9em;
+}
+button.btn.searchIcon{
+  font-size: 1.4em;
+  padding-top: 0.18rem;
+  padding-bottom: 0.18rem;
+  width: 2em;
+  display: inline;
+}
+.form-control{
+  height: 1.8em;
+  width: 20em;
+  display: inline;
+  margin-top: 0.18rem;
+  font-size: 1em;
+  padding: 1em;
+}
+li > form {
+  align-items: center;
+  display: inline;
+}
+.navright{
+  position: absolute;
+  right: 1em;
+}
+.dropdown-menu{
+  background-color: #262626;
+  text-align: right;
+}
+.dropdown-item{
+  font-size: 0.8em;
+}
+.dropdown-item:hover{
+  background-color: transparent;
+}

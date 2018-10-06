@@ -3,12 +3,12 @@ import {
     VArrayProperty, VBeforeSave, VGooseTypes, VIndexedProp, VMethodProperty, VProperty, VRefProperty, VSchema
 } from "../lib/VGoose/VGoose";
 import {VDBMongoDocument} from "../lib/VGoose/VDBMongoDocument";
-import {CapitaleOwner} from "./Capitale";
+import {CapitalOwner} from "./Capitale";
 
 @VSchema()
 export class Prodotto extends VDBMongoDocument{
-    @VArrayProperty({type: VGooseTypes.ObjectId, ref: CapitaleOwner})
-    public investors: CapitaleOwner[];
+    @VArrayProperty({type: VGooseTypes.ObjectId, ref: CapitalOwner})
+    public investors: CapitalOwner[];
     @VProperty({type: String, required: true})
     public name: string;
     @VProperty({type: String, required: true})
