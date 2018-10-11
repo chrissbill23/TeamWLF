@@ -13,4 +13,9 @@
     <div class="curactor actor bg-danger">Proj 3</div>
   </div>
 </main>
+<ul class="heroes">
+  <li *ngFor="let n of news">
+      <span class="badge">{{n._id}}</span>
+  </li>
+</ul>
 <app-footer></app-footer>

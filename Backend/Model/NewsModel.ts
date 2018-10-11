@@ -13,9 +13,11 @@ class NewsModel extends VModel{
         this.readQuery = new VMongoDBReadQuery();
     }
     public getLatestNews(req: Request, res: Response): void {
-        this.readQuery.reset().limit(parseInt(req.params.limit))
-                    .sort({createdAt: -1})
+        const limit = parseInt(req.params.limit);
+        this.readQuery.reset().sort({createdAt: -1})
                     .lookup("capitalowners", "publisher", "_id", "publisher");
+        if(!isNaN(limit) && limit >= 0)
+            this.readQuery.limit(parseInt(req.params.limit))
         NewsModel.db.findAll(this.readQuery)
             .then((news: News[]) => this.handleSuccess(news, res),
                 (err) => this.handleError(err, res));
