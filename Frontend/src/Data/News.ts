@@ -6,6 +6,6 @@ export class News {
   public title: string;
   public intro: string;
   public description: string;
-  public photos: string;
+  public photos: string[];
   public videos: string;
 }

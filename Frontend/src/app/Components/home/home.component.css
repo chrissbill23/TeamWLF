@@ -4,14 +4,67 @@ h1{
   margin-bottom: 2em;
 }
 .actor{
+  position: relative;
   width: 100%;
-  height: 17em;
-  text-align: center;
+  height: 40em;
+}
+.actor-bg {
+  background-repeat: no-repeat, repeat;
+  background-size: cover;
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+}
+.actor-bg .layer {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.actor .actor-content {
+  filter: blur(0px);
+  -webkit-filter: blur(0px);
+  z-index: 9999;
   font-size: 2em;
+}
+.actor-content img {
+  width: 50%;
+  height: 80%;
+  display: block;
+  position: absolute;
+  top: 3em;
+  bottom: 3em;
+  left: 1em;
+}
+.actor-content .descr {
+  width: 43%;
+  max-height: 80%;
+  overflow-y: auto;
+  position: absolute;
+  top: 3em;
+  bottom: 3em;
+  right: 1em;
+
+}
+.actor-content .descr h2{
+  font-size: 1em;
+  font-weight: 900;
+}
+.actor-content .descr p{
+  font-size: 0.7em;
+}
+.actor-content, .actor-bg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 .show{
   height: 40em;
   margin-bottom: 22em;
+  clear: both;
 }
 #projs h1 {
   text-align: right;

@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {MessageService} from '../MessagesSerice/message.service';
 import {News} from '../../../Data/News';
-import { Observable} from 'rxjs';
+import {Observable} from 'rxjs';
+import { catchError, map, tap } from 'rxjs/operators';
+import {ErrorhandlerService} from '../ErrorHandler/errorhandler.service';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +22,12 @@ export class NewsService {
   }
   /** GET News from the server */
   getNews (limit = -1, descOrder = true): Observable<News[]> {
-    return this.http.get<News[]>(this.newsUrl + '/' + limit);
+    return this.http
+      .get<News[]>(this.newsUrl + '/' + limit)
+      .pipe(
+        tap(news => this.log('fetched news')),
+        catchError(ErrorhandlerService.handleError('getNews', []))
+      );
   }
 }
+

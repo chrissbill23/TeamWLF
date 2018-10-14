@@ -1,10 +1,46 @@
 <app-header></app-header>
 <main>
-  <div class="show" id="news">
+  <div class="show async-apply" id="news" *ngIf="news">
     <h1>News</h1>
-    <div class="actor curactor bg-info" data-effect="slide">News 1</div>
-    <div class="actor bg-success" data-effect="blind" data-stageduration="2000">News 2</div>
-    <div class="actor bg-danger">News 3</div>
+    <div class="actor curactor" >
+      <div class="actor-bg" [ngStyle]="setBG(0)"><div class="layer"></div></div>
+      <div class="actor-content">
+        <img src="{{news[0].photos[0]}}">
+        <div class="descr">
+          <h2><a href="#">{{news[0].title}}</a></h2>
+          <p>{{news[0].intro}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="actor" >
+      <div class="actor-bg" [ngStyle]="setBG(1)"><div class="layer"></div></div>
+      <div class="actor-content">
+        <img src="{{news[1].photos[0]}}">
+        <div class="descr">
+          <h2><a href="#">{{news[1].title}}</a></h2>
+          <p>{{news[1].intro}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="actor" >
+      <div class="actor-bg" [ngStyle]="setBG(2)"><div class="layer"></div></div>
+      <div class="actor-content">
+        <img src="{{news[2].photos[0]}}">
+        <div class="descr">
+          <h2><a href="#">{{news[2].title}}</a></h2>
+          <p>{{news[2].intro}}</p>
+        </div>
+      </div>
+    </div>
+    <!--
+    <ng-template ngFor let-item [ngForOf]="news" let-i="index">
+      <div class="actor curactor" data-effect="slide" [ngStyle]="setBG(0)" *ngIf="i == 0">{{item.title}}</div>
+      <div class="actor bg-success" data-effect="blind" [ngStyle]="setBG(i)" data-stageduration="2000" *ngIf="i > 0">{{item.title}}</div>
+      <div class="async-apply" *ngIf="i == news.length-1">
+      </div>
+    </ng-template> -->
   </div>
   <div class="show" id="projs">
     <h1>Running projects</h1>
@@ -13,9 +49,4 @@
     <div class="curactor actor bg-danger">Proj 3</div>
   </div>
 </main>
-<ul class="heroes">
-  <li *ngFor="let n of news">
-      <span class="badge">{{n._id}}</span>
-  </li>
-</ul>
 <app-footer></app-footer>

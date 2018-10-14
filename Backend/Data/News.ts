@@ -16,7 +16,7 @@ export class News extends VDBMongoDocument{
     @VProperty({type: String, required: true})
     public description: string;
     @VArrayProperty({type: VGooseTypes.String, required: false})
-    public photos: string;
+    public photos: string[];
     @VArrayProperty({type: VGooseTypes.String, required: false})
-    public videos: string;
+    public videos: string[];
 }
