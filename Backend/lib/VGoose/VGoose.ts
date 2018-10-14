@@ -34,8 +34,9 @@ export function VSchema(timeStamp: boolean = true) {
             if (constructor.prototype.schema == undefined) {
                 constructor.prototype.schema = new Schema();
             }
-            if (timeStamp && constructor.prototype.schema.paths.createdAt) {
-                constructor.prototype.schema.plugin(timestamp);
+            if (timeStamp && constructor.prototype.schema.paths.createdAt === undefined) {
+                constructor.prototype.schema.add({createdAt: { type: Date, default: Date.now() }});
+                constructor.prototype.schema.add({updatedAt: { type: Date, default: Date.now() }});
             }
             constructor.prototype.model = model(constructor.name, constructor.prototype.schema);
         }

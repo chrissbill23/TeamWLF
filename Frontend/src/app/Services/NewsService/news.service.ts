@@ -18,7 +18,7 @@ export class NewsService {
 
   /** Log a NEwsService message with the MessageService */
   private log(message: string) {
-    this.messageService.add(`HeroService: ${message}`);
+    this.messageService.add(`NewsService: ${message}`);
   }
   /** GET News from the server */
   getNews (limit = -1, descOrder = true): Observable<News[]> {

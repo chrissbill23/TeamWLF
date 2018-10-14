@@ -1,52 +1,54 @@
 <app-header></app-header>
 <main>
+  <h1>News</h1>
   <div class="show async-apply" id="news" *ngIf="news">
-    <h1>News</h1>
-    <div class="actor curactor" >
-      <div class="actor-bg" [ngStyle]="setBG(0)"><div class="layer"></div></div>
-      <div class="actor-content">
-        <img src="{{news[0].photos[0]}}">
-        <div class="descr">
-          <h2><a href="#">{{news[0].title}}</a></h2>
-          <p>{{news[0].intro}}</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="actor" >
-      <div class="actor-bg" [ngStyle]="setBG(1)"><div class="layer"></div></div>
-      <div class="actor-content">
-        <img src="{{news[1].photos[0]}}">
-        <div class="descr">
-          <h2><a href="#">{{news[1].title}}</a></h2>
-          <p>{{news[1].intro}}</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="actor" >
-      <div class="actor-bg" [ngStyle]="setBG(2)"><div class="layer"></div></div>
-      <div class="actor-content">
-        <img src="{{news[2].photos[0]}}">
-        <div class="descr">
-          <h2><a href="#">{{news[2].title}}</a></h2>
-          <p>{{news[2].intro}}</p>
-        </div>
-      </div>
-    </div>
-    <!--
     <ng-template ngFor let-item [ngForOf]="news" let-i="index">
-      <div class="actor curactor" data-effect="slide" [ngStyle]="setBG(0)" *ngIf="i == 0">{{item.title}}</div>
-      <div class="actor bg-success" data-effect="blind" [ngStyle]="setBG(i)" data-stageduration="2000" *ngIf="i > 0">{{item.title}}</div>
-      <div class="async-apply" *ngIf="i == news.length-1">
+    <div class="{{getActorClass(i)}}" >
+      <div class="actor-bg" [ngStyle]="setBG(i)"><div class="layer"></div></div>
+      <div class="actor-content">
+        <img class="image-pos image-left" src="{{news[i].photos[0]}}">
+        <div class="descr descr-right">
+          <h2><a href="#">{{news[i].title}}</a></h2>
+          <p>{{news[i].intro}}</p>
+        </div>
       </div>
-    </ng-template> -->
+    </div>
+    </ng-template>
+    <div class="navOpt">
+      <button href="#" class="skip-actor-prev btn-link btn"><i class="fas fa-angle-left"></i></button>
+      <a href="#" class="show-spectator" data-show="#news" data-obs="0"><i class="fas fa-circle"></i></a>
+      <a href="#" class="show-spectator" data-show="#news" data-obs="1"><i class="fas fa-circle"></i></a>
+      <a href="#" class="show-spectator" data-show="#news" data-obs="2"><i class="fas fa-circle"></i></a>
+      <button href="#" class="skip-actor-next btn-link btn"><i class="fas fa-angle-right"></i></button>
+    </div>
   </div>
-  <div class="show" id="projs">
-    <h1>Running projects</h1>
-    <div class="actor bg-info" data-effect="slide">Proj 1</div>
-    <div class="actor bg-success" data-effect="blind">Proj 2</div>
-    <div class="curactor actor bg-danger">Proj 3</div>
+
+  <h1 id="projs">Running projects</h1>
+  <div class="show async-apply" id="projsShow" *ngIf="products">
+    <ng-template ngFor let-item [ngForOf]="products" let-i="index">
+      <div class="{{getActorClass(i)}}">
+        <div class="actor-bg" [ngStyle]="setBGPr(i)"><div class="layer"></div></div>
+        <div class="actor-content">
+          <img class="image-pos image-right" src="{{item.logo}}">
+          <div class="descr descr-left">
+            <h2><a href="#">{{item.name}}</a></h2>
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped progress-bar-animated" [ngStyle]="setPB(i)">
+                {{getProgress(i)}}% completed
+              </div>
+            </div>
+            <p>{{item.briefDescr}}</p>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+    <div class="navOpt">
+      <button href="#" class="skip-actor-prev btn-link btn"><i class="fas fa-angle-left"></i></button>
+      <a href="#" class="show-spectator" data-show="#projsShow" data-obs="0"><i class="fas fa-circle"></i></a>
+      <a href="#" class="show-spectator" data-show="#projsShow" data-obs="1"><i class="fas fa-circle"></i></a>
+      <a href="#" class="show-spectator" data-show="#projsShow" data-obs="2"><i class="fas fa-circle"></i></a>
+      <button href="#" class="skip-actor-next btn-link btn"><i class="fas fa-angle-right"></i></button>
+    </div>
   </div>
 </main>
 <app-footer></app-footer>

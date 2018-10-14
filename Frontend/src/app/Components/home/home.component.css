@@ -28,14 +28,19 @@ h1{
   z-index: 9999;
   font-size: 2em;
 }
-.actor-content img {
+.actor-content img.image-pos {
   width: 50%;
   height: 80%;
   display: block;
   position: absolute;
   top: 3em;
   bottom: 3em;
+}
+.image-left{
   left: 1em;
+}
+.image-right{
+  right: 1em;
 }
 .actor-content .descr {
   width: 43%;
@@ -44,8 +49,12 @@ h1{
   position: absolute;
   top: 3em;
   bottom: 3em;
+}
+.descr-right {
   right: 1em;
-
+}
+.descr-left {
+  left: 1em;
 }
 .actor-content .descr h2{
   font-size: 1em;
@@ -66,6 +75,22 @@ h1{
   margin-bottom: 22em;
   clear: both;
 }
-#projs h1 {
+h1#projs {
   text-align: right;
+}
+.navOpt {
+  width: 50%;
+  margin: 2.5em auto;
+  padding-left: 20%;
+}
+.navOpt .fa-circle {
+  margin: 0 0.7em;
+  font-size: 0.4em;
+}
+.navOpt .fa-angle-left, .navOpt .fa-angle-right {
+  margin: 0 0.3em;
+  font-size: 1.7em;
+}
+.navOpt .currentDot {
+  color: white;
 }

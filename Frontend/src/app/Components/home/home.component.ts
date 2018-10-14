@@ -1,6 +1,8 @@
 import { Component, OnInit} from '@angular/core';
 import {NewsService} from '../../Services/NewsService/news.service';
 import {News} from '../../../Data/News';
+import {Prodotto} from '../../../Data/Prodotto';
+import {ProductsService} from '../../Services/ProductService/products.service';
 
 @Component({
   selector: 'app-home',
@@ -9,20 +11,50 @@ import {News} from '../../../Data/News';
 })
 export class HomeComponent implements OnInit  {
   news: News[];
-  constructor(private newsService: NewsService) { }
+  products: Prodotto[];
+  constructor(private newsService: NewsService, private productService: ProductsService) { }
 
   ngOnInit() {
     this.getNews();
+    this.getProds();
+
   }
   getNews(): void {
     this.newsService.getNews(3)
       .subscribe(news => this.news = news);
   }
+  getProds(): void {
+    this.productService.getProducts(3, 1)
+      .subscribe(prods => this.products = prods);
+  }
   setBG(index: number) {
-    const s =  './' + this.news[index].photos[0];
+    const s = this.news[index].photos[0];
     const styles = {
       'background-image': 'url(' + s + ')',
     };
     return styles;
+  }
+  setBGPr(index: number) {
+    const s =  this.products[index].logo;
+    const styles = {
+      'background-image': 'url(' + s + ')',
+    };
+    return styles;
+  }
+  setPB(index: number) {
+    const s = this.getProgress(index);
+    const styles = {
+      'width':  s + '%',
+    };
+    return styles;
+  }
+  getActorClass(index: number) {
+    if ( index === 0) {
+      return 'actor curactor';
+    }
+    return 'actor';
+  }
+  getProgress(index: number) {
+    return Math.round(this.products[index].devCompletion * 100);
   }
 }
