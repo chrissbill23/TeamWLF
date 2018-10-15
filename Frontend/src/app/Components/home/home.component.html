@@ -1,7 +1,13 @@
 <app-header></app-header>
 <main>
   <h1>News</h1>
-  <div class="show async-apply" id="news" *ngIf="news">
+  <div class="show" *ngIf="products.length == 0">
+    <div class="actor-bg" [ngStyle]="setBGDefault()"><div class="layer"></div></div>
+    <div class="actor-content">
+        <h2 class="error">No Recent News found</h2>
+    </div>
+  </div>
+  <div class="show async-apply" id="news" *ngIf="news.length > 0">
     <ng-template ngFor let-item [ngForOf]="news" let-i="index">
     <div class="{{getActorClass(i)}}" >
       <div class="actor-bg" [ngStyle]="setBG(i)"><div class="layer"></div></div>
@@ -24,7 +30,13 @@
   </div>
 
   <h1 id="projs">Running projects</h1>
-  <div class="show async-apply" id="projsShow" *ngIf="products">
+  <div class="show" *ngIf="products.length == 0">
+    <div class="actor-bg" [ngStyle]="setBGDefault()"><div class="layer"></div></div>
+    <div class="actor-content">
+        <h2 class="error">No Running Projects found</h2>
+    </div>
+  </div>
+  <div class="show async-apply" id="projsShow" *ngIf="products.length > 0">
     <ng-template ngFor let-item [ngForOf]="products" let-i="index">
       <div class="{{getActorClass(i)}}">
         <div class="actor-bg" [ngStyle]="setBGPr(i)"><div class="layer"></div></div>

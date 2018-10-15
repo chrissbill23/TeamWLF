@@ -10,8 +10,8 @@ import {ProductsService} from '../../Services/ProductService/products.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit  {
-  news: News[];
-  products: Prodotto[];
+  news: News[] = [];
+  products: Prodotto[] = [];
   constructor(private newsService: NewsService, private productService: ProductsService) { }
 
   ngOnInit() {
@@ -38,6 +38,12 @@ export class HomeComponent implements OnInit  {
     const s =  this.products[index].logo;
     const styles = {
       'background-image': 'url(' + s + ')',
+    };
+    return styles;
+  }
+  setBGDefault() {
+    const styles = {
+      'background-image': 'url(assets/logo.jpg)',
     };
     return styles;
   }

@@ -3,13 +3,20 @@ nav{
 }
 img.navbar-brand{
   width: 10%;
-  margin-right: 10rem;
+}
+.navbar-nav.navleft {
+  margin-left: 10rem;
 }
 ul.navbar-nav {
   margin: 0;
 }
 .navbar {
   align-items: flex-start;
+  position: relative;
+}
+.navbar .navbar-brand, .navbar .navbar-nav {
+  transition:  2s;
+  -webkit-transition: 2s;
 }
 .nav-item{
   margin-left: 0.7em;
@@ -47,4 +54,24 @@ li > form {
 }
 .dropdown-item:hover{
   background-color: transparent;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+  background-color: rgba(48, 48, 48, 0.9);
+  height: 5em;
+}
+.sticky, .sticky .navbar-brand, .sticky .navbar-nav {
+  transition:  1s;
+  -webkit-transition: 1s;
+}
+.sticky .navleft {
+  margin-left: 5em;
+}
+.sticky img.navbar-brand{
+  width: 3em;
+  position: fixed;
+  top: 0.2em;
 }

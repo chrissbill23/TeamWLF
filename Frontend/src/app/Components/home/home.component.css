@@ -25,7 +25,7 @@ h1{
 .actor .actor-content {
   filter: blur(0px);
   -webkit-filter: blur(0px);
-  z-index: 9999;
+  z-index: 5;
   font-size: 2em;
 }
 .actor-content img.image-pos {
@@ -71,9 +71,16 @@ h1{
   height: 100%;
 }
 .show{
+  position: relative;
   height: 40em;
   margin-bottom: 22em;
   clear: both;
+}
+.error {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin: 20% auto;
 }
 h1#projs {
   text-align: right;
@@ -81,7 +88,7 @@ h1#projs {
 .navOpt {
   width: 50%;
   margin: 2.5em auto;
-  padding-left: 20%;
+  padding-left: 19%;
 }
 .navOpt .fa-circle {
   margin: 0 0.7em;
