@@ -3,10 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 import {AppComponent} from './app.component';
 
 const routes: Routes = [
-  { path: '/news', component: AppComponent }
+  { path: 'news', component: AppComponent }
 ];
 @NgModule({
-   // exports: [ RouterModule ],
-   // imports: [ RouterModule.forRoot(routes) ]
+   exports: [ RouterModule ],
+   imports: [ RouterModule.forRoot(routes) ]
 })
 export class AppRoutingModule {}

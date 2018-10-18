@@ -1,12 +1,13 @@
 h1{
   font-size: 1em;
   padding: 0.5em 1em;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 }
 .actor{
   position: relative;
   width: 100%;
   height: 40em;
+  display:block;
 }
 .actor-bg {
   background-repeat: no-repeat, repeat;
@@ -73,8 +74,9 @@ h1{
 .show{
   position: relative;
   height: 40em;
-  margin-bottom: 22em;
+  margin-bottom: 20em;
   clear: both;
+  display:block;
 }
 .error {
   display: block;
@@ -86,12 +88,14 @@ h1#projs {
   text-align: right;
 }
 .navOpt {
-  width: 50%;
+  width: 100%;
   margin: 2.5em auto;
-  padding-left: 19%;
+  position: relative;
+  display: flex;
+  justify-content: center;
 }
 .navOpt .fa-circle {
-  margin: 0 0.7em;
+  margin: 0 0.5em;
   font-size: 0.4em;
 }
 .navOpt .fa-angle-left, .navOpt .fa-angle-right {
@@ -100,4 +104,57 @@ h1#projs {
 }
 .navOpt .currentDot {
   color: white;
+}
+.bttmLink {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 1em;
+  padding-top: 0.6em;
+}
+@media screen and (max-width: 720px) {
+  .actor-content .descr, .actor-content img.image-pos {
+    height: 100%;
+    top: 1em;
+    bottom: 0;
+    display: block;
+  }
+  .actor-content img.image-pos {
+    width: 100%;
+    left: 0;
+    right: 0;
+  }
+  .actor-content .descr {
+    background-color: rgba(0,0,0,0.5);
+    width: 50%;
+    padding: 0.2em 0.4em ;
+  }
+  .actor-bg {
+    display: none;
+  }
+  .descr-right {
+    right: 0;
+  }
+  .descr-left {
+    left: 0;
+  }
+  .actor-content .descr h2{
+    font-size: 0.8em;
+  }
+  .actor-content .descr p{
+    font-size: 0.5em;
+  }
+  h1{
+    margin-bottom: 0;
+  }
+  .bttmLink {
+    padding-top: 0;
+  }
+  .actor, .show {
+    height: 20em;
+  }
+  .navOpt {
+    height: 6em;
+
+  }
 }

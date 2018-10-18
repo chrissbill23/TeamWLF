@@ -54,6 +54,15 @@ export class HomeComponent implements OnInit  {
     };
     return styles;
   }
+  setCircles() {
+    const arr = document.querySelectorAll('.show-spectator');
+    for (const element in arr) {
+      if (typeof arr[element] === 'object') {
+        // arr[element].addEventListener('actoronstage', function() { console.log('Cool');});
+      }
+    }
+
+  }
   getActorClass(index: number) {
     if ( index === 0) {
       return 'actor curactor';

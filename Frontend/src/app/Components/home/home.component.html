@@ -1,7 +1,8 @@
 <app-header></app-header>
 <main>
+  <span class="show-spectator watcher" data-show='#news'></span>
   <h1>News</h1>
-  <div class="show" *ngIf="products.length == 0">
+  <div class="show" *ngIf="news.length == 0">
     <div class="actor-bg" [ngStyle]="setBGDefault()"><div class="layer"></div></div>
     <div class="actor-content">
         <h2 class="error">No Recent News found</h2>
@@ -19,16 +20,19 @@
         </div>
       </div>
     </div>
+      <div class="navOpt" *ngIf="i == news.length-1">
+        <button class="skip-actor-prev btn-link btn"><i class="fas fa-angle-left"></i></button>
+        <button class="show-spectator btn-link btn skip-index currentDot" data-show="#news" data-obs="0"><i class="fas fa-circle"></i></button>
+        <button class="show-spectator btn-link btn skip-index" data-show="#news" data-obs="1"><i class="fas fa-circle"></i></button>
+        <button class="show-spectator btn-link btn skip-index" data-show="#news" data-obs="2"><i class="fas fa-circle"></i></button>
+        <button class="skip-actor-next btn-link btn"><i class="fas fa-angle-right"></i></button>
+        <br>
+        <a class="bttmLink" href="#">Read all news</a>
+      </div>
     </ng-template>
-    <div class="navOpt">
-      <button href="#" class="skip-actor-prev btn-link btn"><i class="fas fa-angle-left"></i></button>
-      <a href="#" class="show-spectator" data-show="#news" data-obs="0"><i class="fas fa-circle"></i></a>
-      <a href="#" class="show-spectator" data-show="#news" data-obs="1"><i class="fas fa-circle"></i></a>
-      <a href="#" class="show-spectator" data-show="#news" data-obs="2"><i class="fas fa-circle"></i></a>
-      <button href="#" class="skip-actor-next btn-link btn"><i class="fas fa-angle-right"></i></button>
-    </div>
   </div>
 
+  <span class="show-spectator watcher" data-show='#projsShow'></span>
   <h1 id="projs">Running projects</h1>
   <div class="show" *ngIf="products.length == 0">
     <div class="actor-bg" [ngStyle]="setBGDefault()"><div class="layer"></div></div>
@@ -53,14 +57,15 @@
           </div>
         </div>
       </div>
+      <div class="navOpt" *ngIf="i == products.length-1">
+        <button class="skip-actor-prev btn-link btn"><i class="fas fa-angle-left"></i></button>
+        <button class="show-spectator btn-link btn skip-index currentDot" data-show="#projsShow" data-obs="0"><i class="fas fa-circle"></i></button>
+        <button class="show-spectator btn-link btn skip-index" data-show="#projsShow" data-obs="1"><i class="fas fa-circle"></i></button>
+        <button class="show-spectator btn-link btn skip-index" data-show="#projsShow" data-obs="2"><i class="fas fa-circle"></i></button>
+        <button href="#" class="skip-actor-next btn-link btn"><i class="fas fa-angle-right"></i></button>
+        <a class="bttmLink" href="#">See all projects</a>
+      </div>
     </ng-template>
-    <div class="navOpt">
-      <button href="#" class="skip-actor-prev btn-link btn"><i class="fas fa-angle-left"></i></button>
-      <a href="#" class="show-spectator" data-show="#projsShow" data-obs="0"><i class="fas fa-circle"></i></a>
-      <a href="#" class="show-spectator" data-show="#projsShow" data-obs="1"><i class="fas fa-circle"></i></a>
-      <a href="#" class="show-spectator" data-show="#projsShow" data-obs="2"><i class="fas fa-circle"></i></a>
-      <button href="#" class="skip-actor-next btn-link btn"><i class="fas fa-angle-right"></i></button>
-    </div>
   </div>
 </main>
 <app-footer></app-footer>

@@ -20,8 +20,18 @@ class ProductModel extends VModel{
     }
     public getProducts(req: Request, res: Response): void {
         const limit = parseInt(req.params.limit);
-        this.readQuery.reset().sort({createdAt: -1})
-            .lookup("capitalowners", "investors", "_id", "investors");
+        const running = parseInt(req.params.running);
+        const order = parseInt(req.params.order);
+        this.readQuery.reset().lookup("capitalowners", "investors", "_id", "investors");
+        if(order === 1 || order === -1){
+            this.readQuery.sort({createdAt: -1});
+        }
+        if(running === 1){
+            this.readQuery.setWhereCondition({devCompletion: { $lt: 1 }});
+        }
+        if(running === 0){
+            this.readQuery.setWhereCondition({devCompletion: 1});
+        }
         if(!isNaN(limit) && limit >= 0)
             this.readQuery.limit(parseInt(req.params.limit))
         ProductModel.db.findAll(this.readQuery)

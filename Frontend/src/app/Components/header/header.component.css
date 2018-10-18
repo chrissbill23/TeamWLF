@@ -46,7 +46,7 @@ li > form {
   right: 1em;
 }
 .dropdown-menu{
-  background-color: #262626;
+  background-color: rgba(38, 38, 38, 0.9);
   text-align: right;
 }
 .dropdown-item{
@@ -63,9 +63,9 @@ li > form {
   background-color: rgba(48, 48, 48, 0.9);
   height: 5em;
 }
-.sticky, .sticky .navbar-brand, .sticky .navbar-nav {
-  transition:  1s;
-  -webkit-transition: 1s;
+.sticky, .sticky .navbar-brand, .sticky .navbar-nav, .dropdown-menu, .dropdown-menu.show {
+  transition:  2s;
+  -webkit-transition: 2s;
 }
 .sticky .navleft {
   margin-left: 5em;
