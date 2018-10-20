@@ -1,0 +1,35 @@
+<span class="show-spectator watcher" [attr.data-show] = "getShowId()"></span>
+<h1 id="{{getTitleId()}}">{{getTitle()}}</h1>
+<div class="show position-relative" *ngIf="data.length == 0">
+  <div class="actor-bg position-absolute" [ngStyle]='setBGDefault()'><div class="layer"></div></div>
+  <div class="actor-content position-absolute">
+    <h2 class="error">{{getErrorMsg()}}</h2>
+  </div>
+</div>
+<div class="show async-apply position-relative" id="{{showId}}" *ngIf="data.length > 0">
+  <ng-template ngFor let-item [ngForOf]="data" let-i="index">
+    <div class="{{getActorClass(i)}}">
+      <div class="actor-bg position-absolute" [ngStyle]="setBG(i)"><div class="layer"></div></div>
+      <div class="actor-content position-absolute">
+        <img class="image-pos position-absolute {{getImgPos()}}" src="{{item.mainPhoto}}">
+        <div class="descr position-absolute {{getDescrPos()}}">
+          <h2><a href="#">{{item.name}}</a></h2>
+          <div class="progress" *ngIf="isProject == true">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" [ngStyle]="setPB(i)">
+              {{getProgress(i)}}% completed
+            </div>
+          </div>
+          <p>{{item.briefDescr}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="navOpt position-relative flex-element content-hcenter" *ngIf="i == data.length-1">
+      <button class="skip-actor-prev btn-link btn"><i class="fas fa-angle-left"></i></button>
+      <button class="show-spectator btn-link btn skip-index currentDot" [attr.data-show] = "getShowId()" data-obs="0"><i class="fas fa-circle"></i></button>
+      <button class="show-spectator btn-link btn skip-index" [attr.data-show] = "getShowId()" data-obs="1"><i class="fas fa-circle"></i></button>
+      <button class="show-spectator btn-link btn skip-index" [attr.data-show] = "getShowId()" data-obs="2"><i class="fas fa-circle"></i></button>
+      <button href="#" class="skip-actor-next btn-link btn"><i class="fas fa-angle-right"></i></button>
+      <a class="bttmLink position-absolute" href="#">{{getBttmLinkMsg()}}</a>
+    </div>
+  </ng-template>
+</div>

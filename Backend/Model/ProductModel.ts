@@ -39,7 +39,7 @@ class ProductModel extends VModel{
                 (err) => this.handleError(err, res));
     }
     public addProducts(prod: Prodotto[]) {
-        this.writeQuery.reset()
+        this.writeQuery.reset();
         this.writeQuery.setValue(prod);
         ProductModel.db.addAll(this.writeQuery).then((data: Prodotto[]) => {
             console.log("DATA ADDED!!")

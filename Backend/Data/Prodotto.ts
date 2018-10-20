@@ -1,22 +1,11 @@
-import {
-    Validator,
-    VArrayProperty, VBeforeSave, VGooseTypes, VIndexedProp, VMethodProperty, VProperty, VRefProperty, VSchema
-} from "../lib/VGoose/VGoose";
-import {VDBMongoDocument} from "../lib/VGoose/VDBMongoDocument";
+import {VArrayProperty, VGooseTypes, VProperty, VSchema} from "../lib/VGoose/VGoose";
 import {CapitalOwner} from "./Capitale";
+import {ProfileRecord} from "./ProfileRecord";
 
 @VSchema()
-export class Prodotto extends VDBMongoDocument{
+export class Prodotto extends ProfileRecord{
     @VArrayProperty({type: VGooseTypes.ObjectId, ref: CapitalOwner})
     public investors: string[];
-    @VProperty({type: String, required: true})
-    public name: string;
-    @VProperty({type: String, required: true})
-    public logo: string;
-    @VProperty({type: String, required: true})
-    public briefDescr: string;
-    @VProperty({type: String, required: true})
-    public descr: string;
     @VProperty({type: String, default: ""})
     public website?: string;
     @VProperty({type: String, default: ""})

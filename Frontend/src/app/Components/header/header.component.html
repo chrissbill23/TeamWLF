@@ -1,9 +1,7 @@
-<nav id="topNav" class="navbar navbar-expand-sm">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<app-headermobile></app-headermobile>
+<nav id="topNav" class="navbar navbar-expand-sm flex-element content-top position-relative">
   <!-- Brand -->
-  <img class="navbar-brand" width="300" alt="Our Logo" src="assets/logo.jpg">
+  <img class="navbar-brand" alt="Our Logo" src="assets/logo.jpg">
 
   <!-- Links -->
   <ul class="navbar-nav navleft">
@@ -26,11 +24,11 @@
       </div>
     </li>
     <li class="nav-item">
-      <button class="nav-link btn bg-transparent btn-link searchIcon datadrop-apply" data-target="#seachslide"><i class="fas fa-search"></i></button>
-      <input class="form-control" id="seachslide" type="text" placeholder="Search" style="display: none;" data-direction="left" data-effect="slide">
+      <button class="nav-link btn bg-transparent btn-link searchIcon datadrop-apply" data-target="#searchslide"><i class="fas fa-search"></i></button>
+      <input class="form-control" id="searchslide" type="text" placeholder="Search" style="display: none;" data-direction="left" data-effect="slide">
     </li>
   </ul>
-  <ul class="navbar-nav navright">
+  <ul class="navbar-nav navright position-absolute">
     <li class="nav-item">
       <a class="nav-link" href="#">Join us</a>
     </li>

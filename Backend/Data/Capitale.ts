@@ -1,7 +1,4 @@
-import {
-    Validator,
-    VArrayProperty, VBeforeSave, VGooseTypes, VIndexedProp, VMethodProperty, VProperty, VSchema,
-} from "../lib/VGoose/VGoose";
+import {VProperty, VSchema} from "../lib/VGoose/VGoose";
 import {VDBMongoDocument} from "../lib/VGoose/VDBMongoDocument";
 
 @VSchema()

@@ -1,18 +1,12 @@
-nav{
-  padding-top: 1.5em;
-}
+
 img.navbar-brand{
-  width: 10%;
+  width: 8%;
 }
 .navbar-nav.navleft {
-  margin-left: 10rem;
+  margin-left: 10%;
 }
 ul.navbar-nav {
   margin: 0;
-}
-.navbar {
-  align-items: flex-start;
-  position: relative;
 }
 .navbar .navbar-brand, .navbar .navbar-nav {
   transition:  2s;
@@ -20,7 +14,7 @@ ul.navbar-nav {
 }
 .nav-item{
   margin-left: 0.7em;
-  font-size: 0.9em;
+  font-size: 90%;
 }
 button.btn.searchIcon{
   font-size: 1.4em;
@@ -37,12 +31,7 @@ button.btn.searchIcon{
   font-size: 1em;
   padding: 1em;
 }
-li > form {
-  align-items: center;
-  display: inline;
-}
 .navright{
-  position: absolute;
   right: 1em;
 }
 .dropdown-menu{
@@ -55,15 +44,7 @@ li > form {
 .dropdown-item:hover{
   background-color: transparent;
 }
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 9999;
-  background-color: rgba(48, 48, 48, 0.9);
-  height: 5em;
-}
-.sticky, .sticky .navbar-brand, .sticky .navbar-nav, .dropdown-menu, .dropdown-menu.show {
+.sticky .navbar-brand, .sticky .navbar-nav, .dropdown-menu, .dropdown-menu.show {
   transition:  2s;
   -webkit-transition: 2s;
 }
@@ -75,3 +56,28 @@ li > form {
   position: fixed;
   top: 0.2em;
 }
+@media screen and (max-width: 720px) {
+  #topNav {
+    display: none;
+  }
+}
+@media screen and (max-width: 980px) {
+  .navbar-nav.navleft {
+    margin-left: 3%;
+  }
+}
+@media screen and (max-width: 880px) {
+  .form-control{
+    width: 17em;
+  }
+  .navbar-nav.navleft {
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 790px) {
+  .form-control{
+    width: 13em;
+  }
+}
+
+

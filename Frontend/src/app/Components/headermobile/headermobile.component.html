@@ -1,0 +1,41 @@
+<nav id="mobNavTop" class="flex-element content-top position-relative">
+  <!-- Brand -->
+  <img alt="Our Logo" src="assets/logo.jpg">
+  <input class="form-control position-absolute flex-element" id="searchslidemob"
+         type="text" placeholder="Search" data-direction="right" data-effect="slide" style="display: none;">
+  <button id="searchBtn" class="btn bg-transparent searchIcon datadrop-apply position-absolute flex-element"
+          data-target="#searchslidemob"><i class="fas fa-search"></i></button>
+  <button id="togglerM" class="datadrop-apply btn bg-transparent text-secondary position-absolute flex-element content-vcenter content-left"
+          data-target=".layer, #sideMobNav"> <i class="fas fa-bars"></i> </button>
+</nav>
+<nav id="sideMobNav" class="position-absolute bg-fourth" data-effect="slide" data-direction="right" style="display: none;">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <button id="closeButton" class="datadrop-apply btn text-sixth bg-transparent" data-target=".layer, #sideMobNav"><i class="fas fa-times"></i></button>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">About</a>
+    </li>
+    <!-- Dropdown -->
+    <li class="nav-item dropdown">
+      <a class="nav-link datadrop-apply position-relative" href="#" id="navbardrop" data-target=".dropdown-menus">
+        <i class="fas fa-caret-down dropdown-menus position-absolute" data-effect="rotate" data-angle="180" data-time="600"></i> Products
+      </a>
+      <div id="dropdown-menu" class="dropdown-menus" data-effect="slide" data-direction="up" data-time="600" style="display: none;">
+        <a class="dropdown-item bg-primary" href="#">Desktop</a>
+        <a class="dropdown-item bg-primary" href="#">Mobile</a>
+        <a class="dropdown-item bg-primary" href="#">Web</a>
+      </div>
+    </li>
+    <li class="nav-item down-dropdown">
+      <a class="nav-link" href="#">Join us</a>
+    </li>
+    <li class="nav-item down-dropdown">
+      <a class="nav-link" href="#">Login</a>
+    </li>
+  </ul>
+
+</nav>

@@ -1,12 +1,8 @@
 import {CapitalOwner} from './Capitale';
+import {ProfileRecord} from './ProfileRecord';
 
-export class Prodotto {
-  public _id?: string;
+export class Prodotto extends ProfileRecord {
   public investors: CapitalOwner[];
-  public name: string;
-  public logo: string;
-  public briefDescr: string;
-  public descr: string;
   public website?: string;
   public linkdocumentation?: string;
   public devCompletion: number;
