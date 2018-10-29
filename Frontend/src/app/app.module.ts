@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title  } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -11,6 +11,7 @@ import { MessagesComponent } from './Components/messages/messages.component';
 import { HeadermobileComponent } from './Components/headermobile/headermobile.component';
 import { HomesectionComponent } from './Components/home/homesection/homesection.component';
 import { DataShowDirective } from './Directives/DataShow/data-show.directive';
+import { SearchProjComponent } from './Components/search-proj/search-proj.component';
 
 @NgModule({
   declarations: [
@@ -21,14 +22,15 @@ import { DataShowDirective } from './Directives/DataShow/data-show.directive';
     MessagesComponent,
     HeadermobileComponent,
     HomesectionComponent,
-    DataShowDirective
+    DataShowDirective,
+    SearchProjComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [Title],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -56,7 +56,7 @@ a:hover, .btn-link:hover, a.dropdown-item:hover, a:active, .btn-link:hover{
   color: #4080BF !important;
 }
 .text-third {
-  color: white;
+  color: white !important;
 }
 .text-fourth {
   color: rgb(38, 38, 38);
@@ -115,4 +115,7 @@ a:hover, .btn-link:hover, a.dropdown-item:hover, a:active, .btn-link:hover{
 }
 .position-fixed {
   position: fixed;
+}
+.currentDot {
+  color: white;
 }

@@ -12,4 +12,6 @@ export abstract class ProfileRecord extends VDBMongoDocument{
     public briefDescr: string;
     @VProperty({type: String, required: true})
     public longDescr: string;
+    @VProperty({type: Boolean, default: true})
+    public searchable: boolean;
 }
