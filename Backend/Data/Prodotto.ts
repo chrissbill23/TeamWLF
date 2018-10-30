@@ -6,10 +6,6 @@ import {ProfileRecord} from "./ProfileRecord";
 export class Prodotto extends ProfileRecord{
     @VArrayProperty({type: VGooseTypes.ObjectId, ref: CapitalOwner})
     public investors: string[];
-    @VProperty({type: String, default: ""})
-    public website?: string;
-    @VProperty({type: String, default: ""})
-    public linkdocumentation?: string;
     @VProperty({type: Number, required: true, default: 0})
     public devCompletion: number;
     @VProperty({type: Object, required: false})

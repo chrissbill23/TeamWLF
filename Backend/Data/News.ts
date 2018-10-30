@@ -6,8 +6,4 @@ import {ProfileRecord} from "./ProfileRecord";
 export class News extends ProfileRecord{
     @VRefProperty({type: VGooseTypes.ObjectId, ref: CapitalOwner})
     public publisher: string;
-    @VArrayProperty({type: VGooseTypes.String, required: false})
-    public photos: string[];
-    @VArrayProperty({type: VGooseTypes.String, required: false})
-    public videos: string[];
 }

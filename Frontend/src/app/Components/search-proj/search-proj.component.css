@@ -1,0 +1,11 @@
+h2 {
+  font-size: 1em;
+}
+#search-2 input {
+  display: inline;
+  height: 2em;
+  margin: 0;
+  border: 0;
+  color: #878789;
+  text-align: center;
+}

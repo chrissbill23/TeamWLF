@@ -49,6 +49,9 @@ a:hover, .btn-link:hover, a.dropdown-item:hover, a:active, .btn-link:hover{
 .bg-sixth {
   background-color: #981b27;
 }
+.bg-seventh, .focus-bg-seventh:focus {
+  background-color: #4A4A4A;
+}
 .text-primary {
   color: #303030 !important;
 }
