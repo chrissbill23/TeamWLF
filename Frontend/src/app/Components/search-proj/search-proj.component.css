@@ -1,5 +1,14 @@
 h2 {
   font-size: 1em;
+  margin-left: 2em;
+}
+h3 {
+  font-size: 0.9em;
+  padding: 0.2em;
+  background-color: #666666;
+}
+#search-2 {
+  padding-right: 22%;
 }
 #search-2 input {
   display: inline;
@@ -8,4 +17,44 @@ h2 {
   border: 0;
   color: #878789;
   text-align: center;
+  font-size: 1em;
+  padding-left: 2em;
+}
+#search-2 > div {
+  width: 40%;
+}
+#search-2 button {
+  top: 0;
+  left: 0;
+  width: 2em;
+  height: 2em;
+  color: #878789;
+  padding: 0.161em 0 0;
+  font-size: 1em;
+ }
+#bodySearch {
+  margin: 2em;
+  height: 100%;
+}
+#bodySearch::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.body-part {
+  border-radius: 0.1em;
+  float: left;
+}
+.body-left {
+  margin-right: 1.5em;
+  width: 25%;
+}
+.body-right {
+  width: 72%;
+}
+select {
+  height: 2em;
+  font-size: 0.9em;
+  margin: 1em;
+  width: 90%;
 }

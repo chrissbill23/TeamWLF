@@ -1,15 +1,10 @@
 footer{
   margin-top: 4em;
-  align-items: flex-end;
   height: 8rem;
-  position: relative;
   background-color: rgb(38, 38, 38);
+  clear: both;
 }
 strong {
   text-align: center;
-  position: absolute;
-  bottom: 1em;
-  left: 0;
-  right: 0;
   font-size: 0.6em;
 }

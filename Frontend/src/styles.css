@@ -30,7 +30,9 @@ a:hover, .btn-link:hover, a.dropdown-item:hover, a:active, .btn-link:hover{
   transition:  0.5s;
   -webkit-transition: 0.5s;
 }
-
+input[type=text]:focus {
+  border-color: #4080BF !important;
+}
 .bg-primary{
   background-color: #303030 !important;
 }
@@ -70,6 +72,9 @@ a:hover, .btn-link:hover, a.dropdown-item:hover, a:active, .btn-link:hover{
 .text-sixth {
   color: #981b27;
 }
+.text-seventh {
+  color: #4A4A4A;
+}
 .layer {
   background-color: rgba(0, 0, 0, 0.5);
   position: absolute;
@@ -105,10 +110,10 @@ a:hover, .btn-link:hover, a.dropdown-item:hover, a:active, .btn-link:hover{
   justify-content: center;
 }
 .content-right {
-  justify-content: right;
+  justify-content: flex-end;
 }
 .content-left {
-  justify-content: right;
+  justify-content: flex-start;
 }
 .position-relative {
   position: relative;

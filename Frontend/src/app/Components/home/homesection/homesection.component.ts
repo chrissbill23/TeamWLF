@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {DynamicTitleService} from '../../../Services/DynamicTitle/dynamic-title.service';
 
 @Component({
   selector: 'app-homesection',
@@ -10,13 +11,14 @@ export class HomesectionComponent implements OnInit {
   @Input() isProject: boolean;
   @Input() index: number;
   showId: string;
-  constructor() { }
+  constructor(private titleSetter: DynamicTitleService) { }
 
   ngOnInit() {
     switch (this.index) {
       case 1: this.showId = 'projsShow'; break;
       default: this.showId = 'news';
     }
+    this.titleSetter.setTitle('Home');
   }
 
   setBG(index: number) {
